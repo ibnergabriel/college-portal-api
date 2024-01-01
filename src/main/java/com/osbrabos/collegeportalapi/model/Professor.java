@@ -1,5 +1,6 @@
-package com.osbrabos.collegeportalapi.model.entities;
+package com.osbrabos.collegeportalapi.model;
 
+import com.osbrabos.collegeportalapi.model.Person;
 import com.osbrabos.collegeportalapi.model.enums.Degree;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.osbrabos.collegeportalapi.model.entities;
+package com.osbrabos.collegeportalapi.model;
 
 import com.osbrabos.collegeportalapi.model.enums.Department;
 import jakarta.persistence.*;

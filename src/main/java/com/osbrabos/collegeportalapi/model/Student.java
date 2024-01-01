@@ -1,5 +1,6 @@
-package com.osbrabos.collegeportalapi.model.entities;
+package com.osbrabos.collegeportalapi.model;
 
+import com.osbrabos.collegeportalapi.model.Person;
 import com.osbrabos.collegeportalapi.model.enums.Graduation;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,7 +8,7 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
 @Entity
-public class Student extends Person{
+public class Student extends Person {
 
     @Column(unique = true, nullable = false)
     private String enrollment;

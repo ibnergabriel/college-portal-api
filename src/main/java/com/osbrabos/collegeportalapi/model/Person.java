@@ -1,4 +1,4 @@
-package com.osbrabos.collegeportalapi.model.entities;
+package com.osbrabos.collegeportalapi.model;
 
 import java.time.LocalDate;
 
