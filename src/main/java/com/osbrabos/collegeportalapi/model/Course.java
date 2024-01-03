@@ -24,7 +24,12 @@ public class Course {
     @Enumerated(EnumType.STRING)
     private Department department;
 
-    @ManyToMany(mappedBy = "course")
+    @ManyToMany
+    @JoinTable(
+            name = "enrolled_courses", // nome da tabela de junção
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "enrolled_course_id")
+    )
     private List<EnrolledCourse> enrolledCourses;
 
     @ManyToOne(fetch = FetchType.LAZY)

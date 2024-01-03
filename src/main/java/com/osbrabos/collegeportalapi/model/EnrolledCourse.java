@@ -27,8 +27,7 @@ public class EnrolledCourse{
     @JoinColumn(name = "student_id")
     private Student student;
 
-    @ManyToMany
-    @JoinColumn(name = "course_id")
+    @ManyToMany(mappedBy = "enrolledCourses")
     private List<Course> course;
 
     private LocalDateTime createdAt;
