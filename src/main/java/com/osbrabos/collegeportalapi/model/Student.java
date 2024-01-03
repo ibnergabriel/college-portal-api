@@ -1,17 +1,19 @@
 package com.osbrabos.collegeportalapi.model;
 
+import java.time.LocalDate;
+import java.util.Set;
+
 import com.osbrabos.collegeportalapi.model.enums.Gender;
 import com.osbrabos.collegeportalapi.model.enums.Graduation;
-import jakarta.persistence.*;
-import lombok.Getter;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.OneToMany;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import java.time.LocalDate;
-import java.util.List;
-
-@Getter
-@Setter
 @NoArgsConstructor
 @Entity
 public class Student extends Person {
@@ -25,8 +27,8 @@ public class Student extends Person {
     @Enumerated(EnumType.STRING)
     private Graduation graduation;
 
-    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
-    private List<Course> courses;
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private Set<EnrolledCourse> enrolledCourses;
 
     public Student(String name, LocalDate dateOfBirth, Gender gender, String phoneNumber, String cpf, Address address, String enrollment, String email, Graduation graduation) {
         super(name, dateOfBirth, gender, phoneNumber, cpf, address);

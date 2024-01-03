@@ -24,17 +24,17 @@ public class Course {
     @Enumerated(EnumType.STRING)
     private Department department;
 
-    @ManyToMany
-    @JoinColumn(name = "students_id")
-    private List<Student> students;
+    @ManyToMany(mappedBy = "course")
+    private List<EnrolledCourse> enrolledCourses;
 
-    @ManyToMany
-    @JoinColumn(name = "professors_id")
-    private List<Professor> professors;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "professor_id")
+    private Professor professor;
 
-    public Course(Long id, String name, Department department) {
+    public Course(Long id, String name, Department department, Professor professor) {
         this.id = id;
         this.name = name;
         this.department = department;
+        this.professor = professor;
     }
 }
