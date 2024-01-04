@@ -1,13 +1,17 @@
 package com.osbrabos.collegeportalapi.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
-public record Address(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id, 
-    String country, 
-    String state, 
-    String city, 
-    String street,
-    String postalCode ) {
-} 
+@Data
+public final class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String country;
+    private String state;
+    private String city;
+    private String street;
+    private String postalCode;
+}
