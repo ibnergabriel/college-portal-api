@@ -11,9 +11,9 @@ import com.osbrabos.collegeportalapi.services.StudentService;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/students")
+@RequestMapping(value = "/api/students")
 public class StudentController {
-    private StudentService studentService;
+    private final StudentService studentService;
 
     public StudentController(StudentService studentService){
         this.studentService = studentService;

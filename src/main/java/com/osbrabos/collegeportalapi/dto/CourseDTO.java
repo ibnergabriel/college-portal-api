@@ -7,7 +7,5 @@ import lombok.Data;
 import java.util.List;
 
 
-public record CourseDTO(
-        Long id, String name, Department department, List<EnrolledCourseDTO> enrolledCourses, Professor professor
-) {
+public record CourseDTO(){
 }

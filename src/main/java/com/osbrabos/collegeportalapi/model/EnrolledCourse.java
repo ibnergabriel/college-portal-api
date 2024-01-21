@@ -21,7 +21,7 @@ import lombok.ToString;
 public class EnrolledCourse{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     @ManyToOne
     @JoinColumn(name = "student_id")
@@ -31,10 +31,4 @@ public class EnrolledCourse{
     private List<Course> course;
 
     private LocalDateTime createdAt;
-
-    public EnrolledCourse(Long id, Student student, LocalDateTime createdAt){
-        this.id = id;
-        this.student = student;
-        this.createdAt = createdAt;
-    }
 }

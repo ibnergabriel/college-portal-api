@@ -1,21 +1,8 @@
 package com.osbrabos.collegeportalapi.dto;
 
-import com.osbrabos.collegeportalapi.model.EnrolledCourse;
 import com.osbrabos.collegeportalapi.model.enums.Graduation;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-import java.util.Set;
+import java.time.LocalDate;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
-public class StudentDTO extends PersonDTO{
-
-    private String enrollment;
-
-    private String email;
-
-    private Graduation graduation;
-
-    private Set<EnrolledCourse> enrolledCourses;
+public record StudentDTO(String name, LocalDate dateOfBirth, String email, String enrollment, Graduation graduation){
 }

@@ -2,21 +2,17 @@ package com.osbrabos.collegeportalapi.model;
 
 import com.osbrabos.collegeportalapi.model.enums.Department;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.List;
 
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 @Entity
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     @Column(unique = true, nullable = false)
     private String name;
@@ -36,10 +32,4 @@ public class Course {
     @JoinColumn(name = "professor_id")
     private Professor professor;
 
-    public Course(Long id, String name, Department department, Professor professor) {
-        this.id = id;
-        this.name = name;
-        this.department = department;
-        this.professor = professor;
-    }
 }
