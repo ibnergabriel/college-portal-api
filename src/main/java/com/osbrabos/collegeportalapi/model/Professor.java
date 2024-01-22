@@ -9,8 +9,8 @@ import java.util.List;
 @Data
 @Entity
 public class Professor{
-    @Id
-    private String id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private LocalDate dateOfBirth;
     @Column(name = "professor_email")
