@@ -1,5 +1,6 @@
 package com.osbrabos.collegeportalapi.services;
 
+import com.osbrabos.collegeportalapi.dto.StudentDTO;
 import com.osbrabos.collegeportalapi.model.Student;
 import com.osbrabos.collegeportalapi.repositories.StudentRepository;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,9 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public Student createStudent(Student data){
-        Student student = new Student();
-        return studentRepository.save(student);
+    public Student create(StudentDTO data){
+        Student newStudent = new Student(data);
+        this.studentRepository.save(newStudent);
+        return newStudent;
     }
 }
